@@ -45,8 +45,13 @@ namespace Presentacion
             string nombreUsuario = txtNombreUsuario.Text;
             string contraseña = txtContraseña.Text;
 
+            // Configura los valores del objeto de entidad con los datos del usuario
+            obje.NOMBRE_USUARIO = nombreUsuario;
+            obje.PASS = contraseña;
+
             // Llamar a la Capa de Negocio para validar las credenciales
-            bool usuarioValido = Datos_Usuario_Sistema.D_Login(nombreUsuario, contraseña);
+            string mensajeError;
+            bool usuarioValido = objn.N_Login(obje, out mensajeError);
 
             if (usuarioValido)
             {
@@ -56,8 +61,8 @@ namespace Presentacion
             }
             else
             {
-                // Mostrar un mensaje de error si las credenciales son incorrectas
-                MessageBox.Show("Credenciales incorrectas.");
+                // Mostrar el mensaje de error obtenido de la Capa de Negocio
+                MessageBox.Show("Credenciales incorrectas. Mensaje de error: " + mensajeError);
             }
         }
 

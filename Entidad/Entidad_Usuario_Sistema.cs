@@ -13,6 +13,6 @@ namespace Entidad
         public String CORREO { get; set; }
         public DateTime FECHA_ALTA { get; set; }
         public DateTime FECHA_BAJA { get; set; }
-        public Boolean ESTADO { get; set; }
+        public String ESTADO { get; set; }
     }
 }

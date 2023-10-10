@@ -17,22 +17,29 @@ namespace Datos
     SqlConnection cn = new SqlConnection(
         ConfigurationManager.ConnectionStrings["sql"].ConnectionString);
 
-        public String D_Login(Entidad.Entidad_Usuario_Sistema obje)
+        public bool D_Login(Entidad.Entidad_Usuario_Sistema obje, out string mensajeError)
         {
             cn.Open();
-            SqlCommand cmd = new SqlCommand("sp_Validar_Usuario_Sistema", cn);
+            SqlCommand cmd = new SqlCommand("dbo.ValidarCredencialesUsuario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@nom", obje.NOMBRE_USUARIO);
-            cmd.Parameters.AddWithValue("@pwd", obje.PASS);
+            cmd.Parameters.AddWithValue("@NombreUsuario", obje.NOMBRE_USUARIO);
+            cmd.Parameters.AddWithValue("@Password", obje.PASS);
 
-            SqlParameter mensaje = new SqlParameter("@resultado", SqlDbType.VarChar, 100);
-            mensaje.Direction = ParameterDirection.Output;
-            cmd.Parameters.Add(mensaje);
+            SqlParameter usuarioValidoParam = new SqlParameter("@UsuarioValido", SqlDbType.Bit);
+            usuarioValidoParam.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(usuarioValidoParam);
+
+            SqlParameter mensajeErrorParam = new SqlParameter("@MensajeError", SqlDbType.NVarChar, 255);
+            mensajeErrorParam.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(mensajeErrorParam);
 
             cmd.ExecuteNonQuery();
             cn.Close();
-            return cmd.Parameters["@resultado"].Value.ToString();
+
+            mensajeError = cmd.Parameters["@MensajeError"].Value.ToString();
+            return (bool)cmd.Parameters["@UsuarioValido"].Value;
         }
+
     }
 }

@@ -11,10 +11,10 @@ namespace Negocio
     public class Negocio_Usuario_Sistema
     {
         Datos.Datos_Usuario_Sistema objd = new Datos.Datos_Usuario_Sistema();
-        public String N_Login(Entidad.Entidad_Usuario_Sistema obje)
+
+        public bool N_Login(Entidad.Entidad_Usuario_Sistema obje, out string mensajeError)
         {
-            return objd.D_Login(obje);
-            /*prueba commit*/
+            return objd.D_Login(obje, out mensajeError);
         }
     }
 }
