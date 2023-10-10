@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidad
 {
-    internal class Entidad_Usuario_Sistema
+    public class Entidad_Usuario_Sistema
     {
-        public String Nombre { get; set; }
-        public String Password { get; set; }
-        public DateTime Fecha { get; set; }
-        public Boolean Estado { get; set; }
+        public String NOMBRE_USUARIO { get; set; }
+        public String PASS { get; set; }
+        public String CORREO { get; set; }
+        public DateTime FECHA_ALTA { get; set; }
+        public DateTime FECHA_BAJA { get; set; }
+        public Boolean ESTADO { get; set; }
     }
 }

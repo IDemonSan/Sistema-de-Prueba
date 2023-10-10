@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmVistaCliente
+    partial class IniciarSesionPrueba
     {
         /// <summary>
         /// Required designer variable.

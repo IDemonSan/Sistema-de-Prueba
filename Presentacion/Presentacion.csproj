@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAcceso.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcceso.Designer.cs">
-      <DependentUpon>frmAcceso.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRegistrarCliente.cs">
       <SubType>Form</SubType>
@@ -65,16 +65,16 @@
     <Compile Include="frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVistaCliente.cs">
+    <Compile Include="IniciarSesionPrueba.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVistaCliente.Designer.cs">
-      <DependentUpon>frmVistaCliente.cs</DependentUpon>
+    <Compile Include="IniciarSesionPrueba.Designer.cs">
+      <DependentUpon>IniciarSesionPrueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAcceso.resx">
-      <DependentUpon>frmAcceso.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
