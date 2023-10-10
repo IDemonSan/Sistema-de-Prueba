@@ -14,6 +14,7 @@ namespace Negocio
         public String N_Login(Entidad.Entidad_Usuario_Sistema obje)
         {
             return objd.D_Login(obje);
+            /*prueba commit*/
         }
     }
 }
